@@ -2,6 +2,8 @@
 
 <a href="LICENSE" ><img src="https://img.shields.io/github/license/quantumxt/42_devctr?style=for-the-badge"/></a>
 
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/quantumxt/42_devctr/docker-image.yml?style=for-the-badge">
+
 A minimal C development docker environment with vim. (`norminette` &amp; 42Header for `vim` included!)
 
 ## Setup
