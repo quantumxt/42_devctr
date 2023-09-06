@@ -59,3 +59,7 @@ cd 42_devctr
 - gdb
 - valgrind
 - norminette
+
+## Changelog
+
+- [Changelog](CHANGELOG.md)
