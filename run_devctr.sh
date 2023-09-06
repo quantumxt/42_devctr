@@ -1,0 +1,1 @@
+docker run -it --hostname devctr -v $(pwd)/workspace:/home/user/workspace 42_devctr bash

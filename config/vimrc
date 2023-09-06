@@ -1,0 +1,9 @@
+" Update to your 42 username!
+let g:user42 = 'username'
+let g:mail42 = 'username@student.42.fr'
+
+" Custom vim config
+set number
+set colorcolumn=80
+set autoindent
+set tabstop=4
