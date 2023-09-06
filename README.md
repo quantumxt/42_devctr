@@ -52,6 +52,10 @@ cd 42_devctr
 > **Tip:** To exit the docker image, run `exit`.
 >
 
+## Sample
+
+The `workspace` directory would be attached to the docker container when running, which contains sample file/structure of how you could import you project into docker. Feel free to add or remove the files inside.
+
 ## Tools available
 
 - vim
