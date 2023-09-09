@@ -23,5 +23,9 @@ RUN git clone https://github.com/42Paris/42header
 RUN mkdir -p /home/user/.vim/plugin
 RUN mv /tmp/42header/plugin/stdheader.vim /home/user/.vim/plugin
 
+# Copy tools to bin
+RUN mkdir -p /home/user/bin
+COPY ./tools/checknorm.sh /usr/local/bin/checknorm
+
 USER $USERNAME
 ENTRYPOINT ["/entrypoint.sh"]

@@ -6,6 +6,50 @@
 
 A minimal C development docker environment with vim. (`norminette` &amp; 42Header for `vim` included!)
 
+## Preinstalled tools
+
+- vim
+- tmux
+- gdb
+- valgrind
+- norminette
+
+## Custom tools
+
+### checknorm
+
+![](./media/checknorm_preview.png)
+
+Performs norminette check, and performs compilation if needed (Experimental).
+
+```bash
+checknorm [files to check]
+```
+
+**Show source**
+
+To show the source of the file check, use the `-s` flag.
+
+```bash
+checknorm -s
+```
+
+**Build with make (experimental)**
+
+Run `make` afterit passes the norminette check (Ensure that `Makefile` is present).
+
+```bash
+checknorm -m
+```
+
+**Help**
+
+For more information, use the `-h` flag.
+
+```bash
+checknorm -h
+```
+
 ## Setup
 
 ### Prerequistes
@@ -55,14 +99,6 @@ cd 42_devctr
 ## Sample
 
 The `workspace` directory would be attached to the docker container when running, which contains sample file/structure of how you could import you project into docker. Feel free to add or remove the files inside.
-
-## Tools available
-
-- vim
-- tmux
-- gdb
-- valgrind
-- norminette
 
 ## Changelog
 
