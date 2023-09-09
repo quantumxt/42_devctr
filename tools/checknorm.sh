@@ -66,17 +66,24 @@ echo -e "Files: $(echo "$file_found" | wc -l)\n\n>> Run Check..."
 
 for i in $(echo "$file_found" | sort)
 do
+  file_type=${i: -1}
   if [ "$SHOW_SRC" == true ] ; then
   	echo -e "\n========== $i ==========\n"
   	cat $i
   fi
-  res=$(norminette $i)
+
+  # If header, add the CheckDefine flag
+  if [ "$file_type" ==  "h" ] ; then
+    res=$(norminette -R CheckDefine $i)
+  else
+    res=$(norminette $i)
+  fi
 
   if echo "$res" | awk '{print $2}' | grep -q  "OK!"; then
-    echo -e "${GREEN}<< $res${NC}"
+    echo -e "${GREEN}<< [$file_type] $res${NC}"
     OK=$(($OK + 1))
   else
-    echo -e "${RED}<< $res${NC}"
+    echo -e "${RED}<< [$file_type] $res${NC}"
     KO=$(($KO + 1))
   fi 
 done
