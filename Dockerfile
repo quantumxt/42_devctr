@@ -33,6 +33,7 @@ RUN mv /tmp/42header/plugin/stdheader.vim /home/user/.vim/plugin
 # Copy tools to bin
 RUN mkdir -p /home/user/bin
 COPY ./tools/checknorm.sh /usr/local/bin/checknorm
+COPY ./tools/get_cfiles.sh /usr/local/bin/get_cfiles
 
 USER $USERNAME
 ENTRYPOINT ["/entrypoint.sh"]

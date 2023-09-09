@@ -50,6 +50,17 @@ For more information, use the `-h` flag.
 checknorm -h
 ```
 
+### get_cfiles
+
+![](./media/getcfiles_preview.png)
+
+Tired of typing the individual C source filename(s)? Introducing `get_cfiles`, where it concats all the `*.c` files into an output file (`cfile_list.txt`)!
+
+```bash
+get_cfiles
+```
+
+
 ## Setup
 
 ### Prerequistes
