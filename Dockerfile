@@ -26,14 +26,13 @@ COPY ./config/vimrc /home/user/.vimrc
 
 # Add 42 header
 WORKDIR /tmp
-RUN git clone https://github.com/42Paris/42header
+RUN git clone https://github.com/42Paris/42header.git
 RUN mkdir -p /home/user/.vim/plugin
 RUN mv /tmp/42header/plugin/stdheader.vim /home/user/.vim/plugin
 
-# Copy tools to bin
-RUN mkdir -p /home/user/bin
-COPY ./tools/checknorm.sh /usr/local/bin/checknorm
-COPY ./tools/get_cfiles.sh /usr/local/bin/get_cfiles
+# Get the Helios tools & install them
+RUN git clone https://github.com/quantumxt/helios.git
+RUN cd /tmp/helios && . ./install.sh
 
 USER $USERNAME
 ENTRYPOINT ["/entrypoint.sh"]
