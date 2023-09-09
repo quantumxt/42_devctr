@@ -1,6 +1,13 @@
 FROM ubuntu:22.04
 
-RUN apt update && apt install git tmux vim build-essential gdb valgrind python3-pip -y
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt update && apt install tzdata git tmux vim build-essential gdb valgrind python3-pip -y
+
+# Copy system timezone
+COPY ./tz_tmp /tmp/timezone_target
+RUN ln -fs /usr/share/zoneinfo/$(cat /tmp/timezone_target) /etc/localtime
+RUN dpkg-reconfigure -f noninteractive tzdata
 
 # Get norminette
 RUN python3 -m pip install --upgrade pip setuptools
