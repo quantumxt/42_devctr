@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt update && apt install tzdata git tmux vim build-essential cmake gdb valgrind python3-pip -y
+RUN apt update && apt install tzdata git tmux vim build-essential cmake clang libbsd-dev gdb valgrind python3-pip -y
 
 # Copy system timezone
 COPY ./tz_tmp /tmp/timezone_target
@@ -30,10 +30,6 @@ RUN git clone https://github.com/42Paris/42header.git
 RUN mkdir -p /home/user/.vim/plugin
 RUN mv /tmp/42header/plugin/stdheader.vim /home/user/.vim/plugin
 
-# Get the Helios tools & install them
-RUN git clone https://github.com/quantumxt/helios.git
-RUN cd /tmp/helios && . ./install.sh
-
 # Add gtest
 RUN git clone https://github.com/google/googletest.git -b v1.14.0
 RUN cd /tmp/googletest && mkdir build           # Create a directory to hold the build output.
@@ -43,4 +39,10 @@ RUN make
 RUN make install	# Install /usr/local
 
 USER $USERNAME
+
+# Get the Helios tools & install them
+WORKDIR /tmp
+RUN git clone https://github.com/quantumxt/helios.git
+RUN cd /tmp/helios && . ./install.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
