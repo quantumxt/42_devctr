@@ -4,16 +4,33 @@
 
 <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/quantumxt/42_devctr/docker-image.yml?style=for-the-badge">
 
-A minimal C development docker environment with vim. (`norminette` &amp; 42Header for `vim` included!)
+A C development docker environment. (`norminette` &amp; 42Header for `vim` included!)
 
-## Preinstalled tools
+## Preinstalled Utilities
 
+### Essentials
+- git
 - vim
 - tmux
+- curl
+- cmake
+
+### Debugging
 - gdb
-- valgrind
+- valgrind 3.21.0
+
+### Formatting
 - norminette
+- 42 Header for `vim`
 - [helios](https://github.com/quantumxt/helios) custom tools
+
+### Testing
+- gtest
+- francinette
+
+### Python3
+- python3-pip
+- python3-venv
 
 ## Setup
 
