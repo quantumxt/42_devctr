@@ -66,7 +66,20 @@ cd 42_devctr
 ./build.sh
 ```
 
-## Run
+## Running only paco
+
+Enter the directory to be checked:
+```bash
+cd <your_directory_to check>
+```
+
+After that, run `checkme`:
+```bash
+checkme
+```
+
+
+## Run the development environment
 
 Once the build has been completed, run the container via `run_devctr.sh`.
 
@@ -76,7 +89,6 @@ cd 42_devctr
 ```
 
 > **Tip:** To exit the docker image, run `exit`.
->
 
 ## Sample
 
